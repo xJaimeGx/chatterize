@@ -1,9 +1,9 @@
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import NoMatch from './pages/NoMatch';
 import SingleTopic from './pages/SingleTopic';
@@ -41,11 +41,11 @@ function App() {
                 element={<Signup />}
               />
               <Route
-                path="/profile"
+                path="/profile/:username?"
                 element={<Profile />}
               />
               <Route
-                path="/topic"
+                path="/topic/:id"
                 element={<SingleTopic />}
               />
               <Route
