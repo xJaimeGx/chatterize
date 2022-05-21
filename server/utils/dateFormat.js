@@ -62,7 +62,6 @@ module.exports = (
 
   // set our timeOfDay to am or pm
   const timeOfDay = dateObject.getHours() >= 12 ? 'pm' : 'am';
-
   const timeStampResult = `${currentMonth} ${dateMonth}, ${year} at ${hour}:${minutes} ${timeOfDay}`;
 
   return timeStampResult;
