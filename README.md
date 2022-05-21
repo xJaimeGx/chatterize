@@ -24,7 +24,7 @@
 
   ## License
 
-  Licensed under the MIT license. See [LICENSE.TXT](./LICENSE.TXT) for more information.
+  Licensed under the MIT license. See [LICENSE](./LICENSE) for more information.
 
   ## Contributing 
   This project is open source and we welcome contributions from the community. 
