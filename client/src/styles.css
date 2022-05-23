@@ -49,6 +49,10 @@
   margin: 0.5rem;
 }
 
+.p-10 {
+  padding: 1rem;
+}
+
 .w-100 {
   width: 100%;
 }
@@ -60,10 +64,16 @@ body {
   background-color: var(--color-tert-light);
 }
 
-header {
+header { 
   padding: 0 1rem;
   background: var(--color-prim-dark);
   border-bottom: var(--color-prim-light) solid 2px;
+  position: sticky; 
+  top: 0;
+}
+
+h1 {
+  margin: 0;
 }
 
 a {
