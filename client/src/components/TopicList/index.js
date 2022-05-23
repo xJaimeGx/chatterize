@@ -28,10 +28,12 @@ const TopicList = ({ topics, title }) => {
               </Link>
             </div>
             <div className='card-footer justify-right'>
-              <p className="mb-0">
-                Replies: {topic.replyNum} || <i>Click to{' '}
+              <Link to={`/topic/${topic._id}`}>
+                <p className="mb-0">
+                  Replies: {topic.replyNum} || <i>Click to{' '}
                 {topic.replyNum ? 'see' : 'start'} the chat!</i>
-              </p>
+                </p>
+              </Link>
             </div>
           </div>
         ))}

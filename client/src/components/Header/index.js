@@ -4,14 +4,14 @@ import React from 'react';
 const Header = () => {
   return (
     <header className="bg-secondary mb-4 py-2 flex-row align-center">
-      <div className="header flex-row justify-space-between-lg justify-center align-center">
+      <div className="flex-row justify-space-between-lg justify-center align-center w-100">
           <Link to="/">
             <h1>Chatterize!</h1>
           </Link>
 
         <nav>
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Signup</Link>
+          <Link to="/login">Log In</Link>
+          <Link to="/signup">Sign Up</Link>
         </nav>
       </div>
     </header>
