@@ -21,22 +21,26 @@
   font-weight: bold;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 1% auto;
-}
-
 .flex-row {
   display: flex;
   flex-direction: row;
 }
 
-.justify-right {
-  justify-content: flex-end;
+.flex-row-rev {
+  display: flex;
+  flex-direction: row-reverse;
 }
+
+.justify-left {
+  justify-content: flex-start;
+} 
 
 .justify-space-between-lg {
   justify-content: space-between;
+}
+
+.m-auto {
+  margin-left: 2%;
 }
 
 .mb-3 {
@@ -49,8 +53,12 @@
   margin: 0.5rem;
 }
 
-.p-10 {
-  padding: 1rem;
+.p-8 {
+  padding: 8px;
+}
+
+.w-60 {
+  width: 60%;
 }
 
 .w-100 {
@@ -61,7 +69,7 @@ body {
   margin: 0;
   padding: 0;
   color: var(--color-tert);
-  background-color: var(--color-tert-light);
+  background-image: url('../public/bg2.jpg');
 }
 
 header { 
@@ -70,10 +78,14 @@ header {
   border-bottom: var(--color-prim-light) solid 2px;
   position: sticky; 
   top: 0;
+  z-index: 1;
 }
 
 h1 {
   margin: 0;
+  position: relative;
+  bottom: 18px;
+  right: 18px;
 }
 
 a {
@@ -83,6 +95,56 @@ a {
 
 nav a {  
   padding-left: 1rem;
+}
+
+.box {
+  height: 1px;
+  width: 31px;
+  margin-bottom: 2px;
+  background: var(--color-sec-dark);
+  padding: 20px;
+  position: relative;
+  right: 80px;
+}
+
+.sb:before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid var(--color-sec-dark);
+  border-top: 10px solid var(--color-sec-dark);
+  border-bottom: 10px solid transparent;
+  bottom: -9px;
+}
+
+.sb-header {
+  position: absolute;
+  right: 10px;
+}
+
+.sb-header:before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: relative;
+  border-right: 10px solid transparent;
+  border-left: 10px solid var(--color-tert-light);
+  border-top: 10px solid var(--color-tert-light);
+  border-bottom: 10px solid transparent;
+  bottom: -30px;
+  right: -10px;
+  z-index: -1;
+}
+
+h2 {
+  margin: 0;
+  padding: 2px 5px;
+  width: fit-content;
+  color: var(--color-sec-dark);
+  background: var(--color-tert-light);
+  font-size: 1.5rem;
 }
 
 p {
@@ -100,7 +162,7 @@ p {
 
 .card-header {
   margin: auto;
-  padding: 15px;
+  padding: 14px 20px;
   background-color: var(--color-sec-dark);
   color: var(--color-sec);
   font-size: 1.2rem;
@@ -111,7 +173,7 @@ p {
 }
 
 .card-body {
-  padding: 50px;
+  padding: 20px;
   
 }
 
@@ -135,7 +197,7 @@ p {
 footer {
   background-color: var(--color-prim-light);
   border-top: 1px solid var(--color-prim-dark);
-  color: var(--color-prim-dark);
+  color: var(--color-sec-dark);
   font-size: 1.2rem;
   font-weight: bold;
   line-height: 1.6;

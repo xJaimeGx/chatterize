@@ -12,12 +12,15 @@ const Home = () => {
 
   return (
     <main>
-      <div className='flex-row justify-space-between'>
-        <div className='w-100 mb-3'>
+      <div className='flex-row justify-space-between justify-left w-100'>
+        <div className='w-60 mb-3 float-left m-auto'>
+          <div className='sb-header bold'>
+            <h2>Chitter chatter about stuff that matters!</h2>
+          </div>
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <TopicList topics={topics} title="Chatterize your life!" />
+            <TopicList topics={topics} title="" />
           )}
         </div>
       </div>
