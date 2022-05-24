@@ -195,9 +195,9 @@ p {
 }
 
 footer {
-  background-color: var(--color-prim-light);
+  background-color: var(--color-sec-dark);
   border-top: 1px solid var(--color-prim-dark);
-  color: var(--color-sec-dark);
+  color: var(--color-tert-light);
   font-size: 1.2rem;
   font-weight: bold;
   line-height: 1.6;
