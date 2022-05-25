@@ -26,117 +26,202 @@ function Particle() {
             "enable": true,
             "zIndex": -1
         },
-        "particles": {
-            "number": {
-                "value": 80,
-                "density": {
-                    "enable": true,
-                    "value_area": 800
-                }
-            },
-            "color": {
-                "value": "#ffffff"
-            },
-            "shape": {
-                "type": "circle"
-            },
-            "opacity": {
-                "value": 1,
-                "random": false,
-                "anim": {
-                    "enable": false,
-                    "speed": 1,
-                    "opacity_min": 0.1,
-                    "sync": false
-                }
-            },
-            "size": {
-                "value": 30,
-                "random": true,
-                "anim": {
-                    "enable": false,
-                    "speed": 40,
-                    "size_min": 0.1,
-                    "sync": false
-                }
-            },
-            "line_linked": {
-                "enable": true,
-                "distance": 150,
-                "color": "#ffffff",
-                "opacity": 1,
-                "width": 1
-            },
-            "move": {
-                "enable": true,
-                "speed": 2,
-                "direction": "none",
-                "random": false,
-                "straight": false,
-                "out_mode": "out",
-                "attract": {
-                    "enable": false,
-                    "rotateX": 600,
-                    "rotateY": 1200
-                }
-            }
-        },
+        "detectRetina": true,
+        "fpsLimit": 120,
         "interactivity": {
             "events": {
+                "onClick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "onDiv": {
+                    "elementId": "repulse-div",
+                    "enable": false,
+                    "mode": "repulse"
+                },
                 "onHover": {
                     "enable": true,
-                    "mode": "bubble",
+                    "mode": "repulse",
                     "parallax": {
                         "enable": false,
                         "force": 60,
                         "smooth": 10
                     }
                 },
-                "onClick": {
-                    "enable": true,
-                    "mode": "push"
-                },
                 "resize": true
             },
             "modes": {
+                "bubble": {
+                    "distance": 400,
+                    "duration": 2,
+                    "opacity": 0.8,
+                    "size": 40
+                },
+                "connect": {
+                    "distance": 80,
+                    "lineLinked": {
+                        "opacity": 0.5
+                    },
+                    "radius": 60
+                },
                 "grab": {
                     "distance": 400,
                     "lineLinked": {
                         "opacity": 1
                     }
                 },
-                "bubble": {
-                    "distance": 400,
-                    "size": 100,
-                    "duration": 2,
-                    "opacity": 1,
-                    "speed": 3
-                },
-                "repulse": {
-                    "distance": 200
-                },
                 "push": {
-                    "particles_nb": 4
+                    "quantity": 4
                 },
                 "remove": {
-                    "particles_nb": 2
+                    "quantity": 2
+                },
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "slow": {
+                    "active": false,
+                    "factor": 1,
+                    "radius": 0
                 }
             }
+        },
+        "particles": {
+            "color": {
+                "value": "#ffffff"
+            },
+            "lineLinked": {
+                "blink": false,
+                "color": "#ffffff",
+                "consent": false,
+                "distance": 150,
+                "enable": true,
+                "opacity": 0.4,
+                "shadow": {
+                    "blur": 5,
+                    "color": "lime",
+                    "enable": false
+                },
+                "width": 1
+            },
+            "move": {
+                "attract": {
+                    "enable": false,
+                    "rotate": {
+                        "x": 600,
+                        "y": 1200
+                    }
+                },
+                "collisions": false,
+                "direction": "none",
+                "enable": true,
+                "outMode": "out",
+                "random": false,
+                "speed": 2,
+                "straight": false,
+                "trail": {
+                    "enable": false,
+                    "length": 10,
+                    "fillColor": "#000000"
+                }
+            },
+            "number": {
+                "density": {
+                    "enable": true,
+                    "area": 800
+                },
+                "limit": 0,
+                "value": 80
+            },
+            "opacity": {
+                "animation": {
+                    "enable": true,
+                    "minimumValue": 0.1,
+                    "speed": 1,
+                    "sync": false
+                },
+                "random": false,
+                "value": 0.5
+            },
+            "rotate": {
+                "animation": {
+                    "enable": false,
+                    "speed": 0,
+                    "sync": false
+                },
+                "direction": "clockwise",
+                "random": false,
+                "value": 0
+            },
+            "shape": {
+                "character": [
+                    {
+                        "fill": true,
+                        "font": "Font Awesome 5 Brands",
+                        "style": "",
+                        "value": ["\uf178"],
+                        "weight": "400"
+                    },
+                    {
+                        "fill": true,
+                        "font": "Font Awesome 5 Free",
+                        "style": "",
+                        "value": ["\uf5d1"],
+                        "weight": "900"
+                    }
+                ],
+                "image": {
+                    "height": 100,
+                    "replaceColor": true,
+                    "width": 100
+                },
+                "polygon": {
+                    "sides": 5
+                },
+                "stroke": {
+                    "color": "#ffffff",
+                    "width": 1
+                },
+                "type": "char"
+            },
+            "size": {
+                "animation": {
+                    "enable": false,
+                    "minimumValue": 10,
+                    "speed": 10,
+                    "sync": false
+                },
+                "random": false,
+                "value": 16
+            }
+        },
+        "polygon": {
+            "draw": {
+                "enable": false,
+                "stroke": {
+                    "color": "#ffffff",
+                    "width": 0.5
+                }
+            },
+            "enable": false,
+            "inline": {
+                "arrangement": "one-per-point"
+            },
+            "move": {
+                "radius": 10,
+                "type": "path"
+            },
+            "scale": 1,
+            "type": "none",
+            "url": ""
         },
         "backgroundMask": {
-            "enable": true,
-            "cover": {
-                "value": {
-                    "r": 255,
-                    "g": 255,
-                    "b": 255
-                }
-            }
+            "enable": false
         },
-        "retina_detect": true,
+        "pauseOnBlur": true,
         "background": {
-            "color": "#ffffff",
-            "image": "url('https://particles.js.org/images/background3.jpg')",
+            "color": "#fffff",
             "position": "50% 50%",
             "repeat": "no-repeat",
             "size": "cover"
