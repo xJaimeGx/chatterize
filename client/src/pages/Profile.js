@@ -21,8 +21,8 @@ const Profile = () => {
   return (
     <div className='m-3'>
       <div className="flex-row">
-        <h2 className="sb-header sb-profile bold p-6">
-        You are now viewing {user.username}'s profile.
+        <h2 className="sb-header sb-profile bold p-6 align-center">
+          {user.username}'s profile 
         </h2>
       </div>
 

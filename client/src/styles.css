@@ -62,8 +62,8 @@
   padding: 8px;
 }
 
-.w-60 {
-  width: 60%;
+.w-30 {
+  width: 30%;
 }
 
 .w-100 {
@@ -220,6 +220,8 @@ footer {
 
 
 /* profile-page */
+.align
+
 .justify-right {
   display: flex;
   justify-content: flex-end;
@@ -235,6 +237,7 @@ footer {
 
 .p-6 {
   padding: 6px;
+  padding-right: 18px;
 }
 
 .w-40 {
