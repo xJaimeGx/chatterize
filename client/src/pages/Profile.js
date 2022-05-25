@@ -19,18 +19,18 @@ const Profile = () => {
   }
 
   return (
-    <div>
-      <div className="flex-row mb-3">
-        <h2 className="bg-dark text-secondary p-3 display-inline-block">
-          You are now viewing {user.username}'s profile.
+    <div className='m-3'>
+      <div className="flex-row">
+        <h2 className="sb-header sb-profile bold p-6">
+        You are now viewing {user.username}'s profile.
         </h2>
       </div>
 
-      <div className="flex-row justify-space-between mb-3">
-        <div className="col-12 mb-3 col-lg-8">
+      <div className="flex-row justify-space-between-lg mb-3">
+        <div className="w-40">
           <TopicList topics={user.topics} title={`${user.username}'s topics...`} />
         </div>
-        <div className="col-12 col-lg-3 mb-3">
+        <div className="mb-3">
           <FriendList
             username={user.username}
             friendNum={user.friendNum}
