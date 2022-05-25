@@ -87,6 +87,9 @@ nav a {
 
 p {
   color: var(--color-tert-dark);
+  font-size:18px;
+  text-align:center;
+  font-family:Arial;
 }
 
 .card {
