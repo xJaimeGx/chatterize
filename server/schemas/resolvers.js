@@ -6,7 +6,7 @@ const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
-        const userData = await User.findOne({_id: coontext.user._id})
+        const userData = await User.findOne({_id: context.user._id})
           .select('-__v _password')
           .populate('topics')
           .populate('friends');
@@ -74,7 +74,7 @@ const resolvers = {
         if (context.user) {
           const updatedTopic = await Topic.findOneAndUpdate(
             { _id: topicId },
-            { $push: { reactions: { reactionBody, username: context.user.username } } },
+            { $push: { reactions: { replyBody, username: context.user.username } } },
             { new: true, runValidators: true }
           );
       
