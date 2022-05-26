@@ -3,13 +3,14 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Particle from './components/particleBackground';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import NoMatch from './pages/NoMatch';
-import SingleTopic from './pages/SingleTopic';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
-import Particle from './components/particleBackground';
+import SingleTopic from './pages/SingleTopic';
+
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -20,7 +21,6 @@ const client = new ApolloClient({
 });
 
 
-
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -29,7 +29,7 @@ function App() {
           <Header />
           <div className="container">
             <Routes>
-              <Route
+              <Route exact
                 path="/"
                 element={<Home />}
               />
@@ -56,14 +56,12 @@ function App() {
             </Routes> 
           <div>
         <Particle />
-        </div>, 
-          </div>
+        </div>
+        </div>
           <Footer />
         </div>
       </Router>
-      
     </ApolloProvider>
-    
   );
 };
 
