@@ -14,13 +14,24 @@ const Header = () => {
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
+      <div className="flex-row-rev justify-space-between-lg justify-center align-center w-100 p-8">
+          <div className='box sb'>
+          <Link to="/">
+            <h1>Chatterize!</h1>
+          </Link>
+          </div>
+
+        <nav>
+          <Link to="/login">Log In</Link>
+          <Link to="/signup">Sign Up</Link>
+        </nav>
       </div>
     </nav>
       <a href="#" className="button">
   <span>Chatterize</span>
 </a>
     </header>
-  );
+    
 };
 
 export default Header;

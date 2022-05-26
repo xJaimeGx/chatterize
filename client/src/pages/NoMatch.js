@@ -1,9 +1,10 @@
 import React from 'react';
+import logo from '../assets/image/404error_50small-min.png';
 
 const NoMatch = () => {
   return (
     <div>
-      Page not found.
+    < img src={logo} alt="404error"/>
     </div>
   );
 };

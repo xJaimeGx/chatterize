@@ -9,7 +9,7 @@ import NoMatch from './pages/NoMatch';
 import SingleTopic from './pages/SingleTopic';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
-
+import Particle from './components/particleBackground';
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -18,6 +18,7 @@ const client = new ApolloClient({
   link: httpLink,
   cache: new InMemoryCache(),
 });
+
 
 
 function App() {
@@ -41,7 +42,7 @@ function App() {
                 element={<Signup />}
               />
               <Route
-                path="/profile/:username?"
+                path="/profile/:username"
                 element={<Profile />}
               />
               <Route
@@ -52,12 +53,17 @@ function App() {
                 path="*"
                 element={<NoMatch />}
               />
-            </Routes>
+            </Routes> 
+          <div>
+        <Particle />
+        </div>, 
           </div>
           <Footer />
         </div>
       </Router>
+      
     </ApolloProvider>
+    
   );
 };
 
