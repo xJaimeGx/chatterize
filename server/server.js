@@ -38,18 +38,18 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // use graphql schema to create a new Apollo server
-const startApolloServer = async (typeDefs, resolvers) => {
-await server.start();
-// integrate express application as middleware
-server.applyMiddleware({ app });
+async function startApolloServer(typeDefs, resolvers) {
+  await server.start();
+  // integrate express application as middleware
+  server.applyMiddleware({ app });
 
-db.once('open', () => {
+  db.once('open', () => {
     app.listen(PORT, () => {
       console.log(`API server running on port ${PORT}!`);
       console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
-    })
-  })
-};
+    });
+  });
+}
 
 // start the server
 startApolloServer(typeDefs, resolvers);
