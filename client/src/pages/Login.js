@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
+
+
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
+  const [login, { error }] = useMutation(LOGIN_USER);
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -17,9 +22,10 @@ const Login = (props) => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
+
     // clear form values
     setFormState({
-      email: '',
+      username: '',
       password: '',
     });
   };
@@ -33,11 +39,11 @@ const Login = (props) => {
             <form onSubmit={handleFormSubmit}>
               <input
                 className='form-input'
-                placeholder='Your email'
-                name='email'
-                type='email'
-                id='email'
-                value={formState.email}
+                placeholder='Your username'
+                name='username'
+                type='username'
+                id='username'
+                value={formState.username}
                 onChange={handleChange}
               />
               <input
@@ -53,6 +59,8 @@ const Login = (props) => {
                 Submit
               </button>
             </form>
+
+            {error && <div>Couldn't Login</div>}
           </div>
         </div>
       </div>
