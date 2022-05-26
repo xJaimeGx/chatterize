@@ -98,3 +98,17 @@ export const QUERY_ME_BASIC = gql`
     }
   }
 `;
+
+export const ADD_FRIEND = gql`
+  mutation addFriend($id: ID!) {
+    addFriend(friendId: $id) {
+      _id
+      username
+      friendNum
+      friends {
+        _id
+        username
+      }
+    }
+  }
+`;

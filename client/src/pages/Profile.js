@@ -4,13 +4,15 @@ import { Navigate, useParams } from 'react-router-dom';
 import TopicList from '../components/TopicList';
 import FriendList from '../components/FriendList';
 
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
+import { ADD_FRIEND } from '../utils/mutations';
 import Auth from '../utils/auth';
 
-const Profile = () => {
+const Profile = (props) => {
   const { username: userParam } = useParams();
 
+  const [addFriend] = useMutation(ADD_FRIEND);
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam }
   });
@@ -33,12 +35,28 @@ const Profile = () => {
     );
   }
 
+  const handleClick = async () => {
+    try {
+      await addFriend({
+        variables: { id: user._id },
+      });
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
     <div className='m-3'>
       <div className="flex-row">
         <h2 className="sb-header sb-profile bold p-6 align-center">
           Viewing {userParam ? `${user.username}'s` : 'your'} profile 
         </h2>
+
+        {userParam && (
+          <button className="btn ml-auto" onClick={handleClick}>
+          Add Friend
+        </button>
+        )}
       </div>
 
       <div className="flex-row justify-space-between-lg mb-3">
