@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_TOPICS } from '../utils/queries';
 import TopicList from '../components/TopicList';
+import ReplyList from '../components/ReplyList';
 
 const Home = () => {
   // make query request
@@ -22,6 +23,26 @@ const Home = () => {
           ) : (
             <TopicList topics={topics} title="" />
           )}
+        </div>
+        <div className='Stick flex-row justify-space-between'>
+{/*  */}
+
+        <div>
+      <div className="card mb-3">
+        <p className="card-header">
+          <span style={{ fontWeight: 700 }} className="text-light">
+            {ReplyList.username}
+          </span>{' '}
+          topic on {ReplyList.createdAt}
+        </p>
+        <div className="card-body">
+          <p>{ReplyList.topicText}</p>
+          </div>
+      </div>
+      {ReplyList.replyNum > 0 && <ReplyList replies={ReplyList.replies} />}
+    
+    {/*  */}
+    </div>
         </div>
       </div>
     </main>
