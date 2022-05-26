@@ -29,7 +29,7 @@ function App() {
           <Header />
           <div className="container">
             <Routes>
-              <Route exact
+              <Route
                 path="/"
                 element={<Home />}
               />
