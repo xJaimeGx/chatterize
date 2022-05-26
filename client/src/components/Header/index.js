@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 
+import Auth from '../../utils/auth';
+
 const Header = () => {
+  const logout = event => {
+    event.preventDefault();
+    Auth.logout();
+  }
   return (
     <header className="bg-secondary mb-4 py-2 flex-row align-center">
       <div className="flex-row-rev justify-space-between-lg justify-center align-center w-100 p-8">
@@ -12,8 +18,19 @@ const Header = () => {
           </div>
 
         <nav>
-          <Link to="/login">Log In</Link>
-          <Link to="/signup">Sign Up</Link>
+          {Auth.loggedIn() ? (
+            <>
+            <Link to="/profile">Me</Link>
+            <a href="/" onClick={logout}>
+              Logout
+            </a>
+            </>
+          ) : (
+            <>
+            <Link to="/login">Log In</Link>
+            <Link to="/signup">Sign Up</Link>
+            </>
+          )}
         </nav>
       </div>
     </header>
