@@ -21,12 +21,6 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// use graphql schema to create a new Apollo server
-const startApolloServer = async (typeDefs, resolvers) => {
-await server.start();
-// integrate express application as middleware
-server.applyMiddleware({ app });
-
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.resolve(__dirname, "./client/build")));
     
@@ -34,6 +28,12 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
   });
 }
+
+// use graphql schema to create a new Apollo server
+const startApolloServer = async (typeDefs, resolvers) => {
+await server.start();
+// integrate express application as middleware
+server.applyMiddleware({ app });
 
 db.once('open', () => {
     app.listen(PORT, () => {
