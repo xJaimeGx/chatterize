@@ -146,3 +146,84 @@ footer {
   width: 0px;
   background: transparent;
 }
+.button {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 3px;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden
+}
+.button::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
+  background-size: 50% 100%;
+  border-radius: inherit;
+}
+.button:hover::before {
+  animation: animate_border
+  .75s linear infinite;
+}
+.button span{
+  display: block;
+  background-color: var(--color-sec-dark);
+  padding: 13px 20px;
+  border-radius: 3px;
+  position: relative;
+  z-index: 2;
+}
+@keyframes animate_border {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.navbar{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2f3848;
+  padding: 15px;
+}
+.navbar a{
+  text-decoration: none;
+  color: inherit;
+}
+.logo{
+  margin-right: 50px;
+}
+.list{
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+#toggler,
+.navbar label{
+  display: none;
+}
+@media screen and (max-width: 600px){
+  .menu{
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+  }
+  .list{
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .navbar label{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  #toggler:checked ~ .menu{
+    max-height: 100%;
+  }
+}
