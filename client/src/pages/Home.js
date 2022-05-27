@@ -1,10 +1,11 @@
 import React from 'react';
+import TopicList from '../components/TopicList';
+import TopicForm from '../components/TopicForm';
 import FriendList from '../components/FriendList';
 
 import Auth from '../utils/auth.js';
 import { useQuery } from '@apollo/client';
 import { QUERY_TOPICS, QUERY_ME_BASIC } from '../utils/queries';
-import TopicList from '../components/TopicList';
 
 const Home = () => {
   // make query request
@@ -18,6 +19,11 @@ const Home = () => {
   return (
     <main>
       <div className='flex-row justify-space-between justify-left w-100'>
+        {loggedIn && (
+          <div className="col-12 mb-3">
+            <TopicForm />
+          </div>
+        )}
         <div className='w-30 mb-3 float-left m-auto'>
           <div className={`${loggedIn && 'sb-header bold'}`}>
             <h2>Chitter chatter about stuff that matters!</h2>
@@ -25,7 +31,10 @@ const Home = () => {
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <TopicList topics={topics} title="insert snappy thing here" />
+            <TopicList 
+            topics={topics} 
+            title="insert snappy thing here" 
+            />
           )}
         </div>
         {loggedIn && userData ? (

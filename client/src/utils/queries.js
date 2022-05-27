@@ -112,3 +112,18 @@ export const ADD_FRIEND = gql`
     }
   }
 `;
+
+export const ADD_TOPIC = gql`
+  mutation addTopic($topicText: String!) {
+    addTopic(topicText: $topicText) {
+      _id
+      topicText
+      createdAt
+      username
+      replyCount
+      replies {
+        _id
+      }
+    }
+  }
+`;

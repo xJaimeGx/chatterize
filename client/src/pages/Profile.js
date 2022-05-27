@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 
+import TopicForm from '../components/TopicForm';
 import TopicList from '../components/TopicList';
 import FriendList from '../components/FriendList';
 
@@ -61,8 +62,12 @@ const Profile = (props) => {
 
       <div className="flex-row justify-space-between-lg mb-3">
         <div className="w-40">
-          <TopicList topics={user.topics} title={`${user.username}'s topics...`} />
+          <TopicList 
+          topics={user.topics} 
+          title={`${user.username}'s topics...`} 
+          />
         </div>
+
         <div className="mb-3">
           <FriendList
             username={user.username}
@@ -71,6 +76,7 @@ const Profile = (props) => {
           />
         </div>
       </div>
+      <div className="mb-3">{!userParam && <TopicForm />}</div>
     </div>
   );
 };
