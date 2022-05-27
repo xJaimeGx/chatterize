@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { useMutation } from '@apollo/client';
 import { ADD_TOPIC } from '../../utils/mutations';
-import { QUERY_TOPICS, QUERY_ME } from '../../utils/';
+import { QUERY_TOPICS, QUERY_ME } from '../../utils/queries';
 
 const TopicForm = () => {
 const [topicText, setText] = useState('');
