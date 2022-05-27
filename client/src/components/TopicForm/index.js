@@ -38,7 +38,7 @@ const handleChange = event => {
     }
 };
 
-const handleFormSubmit = async event => {
+const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
@@ -57,12 +57,14 @@ const handleFormSubmit = async event => {
 
     return (
         <div>
-            <p className={`m-0 ${characterCount === 280 ? 'text-error' : ''}`}>
+            <p className={`m-0 ${characterCount === 280 ? 'text-error' : ''}`}
+            >
                 Character Count: 0/280
                 {error && <span className="ml-2">Something went wrong...</span>}
             </p>
-            <form className="flex-row justify-center justify-space-between-md align-stretch">
+            <form className="flex-row justify-center justify-space-between-md align-stretch"
                 onSubmit={handleFormSubmit}
+                >
                 <textarea
                 placeholder="Here's a new topic..."
                 value={topicText}

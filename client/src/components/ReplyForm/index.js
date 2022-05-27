@@ -8,7 +8,7 @@ const ReplyForm = ({ topicId }) => {
     const [characterCount, setCharacterCount] = useState(0);
     const [addReply, { error }] = useMutation(ADD_REPLY);
 
-    const handleChange = event => {
+    const handleChange = (event) => {
         if(event.target.value.length <= 280) {
             setBody(event.target.value);
             setCharacterCount(event.target.value.length);
