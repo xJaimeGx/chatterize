@@ -127,3 +127,18 @@ export const ADD_TOPIC = gql`
     }
   }
 `;
+
+export const ADD_REPLY = gql`
+  mutation addReply($topicId: ID!, $replyBody: String!) {
+    addReply(topicId: $topicId, replyBody: $replyBody) {
+      _id
+      replyCount
+      replies {
+        _id
+        replyBody
+        createdAt
+        username
+      }
+    }
+  }
+`;
