@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+
 const secret = 'mysecretsshhhhh';
 const expiration = '2h';
 
@@ -15,20 +16,17 @@ module.exports = {
         .trim();
     }
   
-    // return the req object if no token
     if (!token) {
       return req;
     }
   
     try {
-      // modify user data to req object
       const { data } = jwt.verify(token, secret, { maxAge: expiration });
       req.user = data;
     } catch {
       console.log('Token is invalid');
     }
   
-    // return updated req object
     return req;
   },
   signToken: function({ username, email, _id }) {

@@ -8,11 +8,11 @@ import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
 import { QUERY_TOPIC } from '../utils/queries';
 
-const SingleTopic = props => {
+const SingleTopic = (props) => {
   const { id: topicId } = useParams();
 
   const { loading, data } = useQuery(QUERY_TOPIC, {
-    variables: { id: topicId }
+    variables: { id: topicId },
   });
     
   const topic = data?.topic || {};

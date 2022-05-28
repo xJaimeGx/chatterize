@@ -8,10 +8,9 @@ import { useQuery } from '@apollo/client';
 import { QUERY_TOPICS, QUERY_ME_BASIC } from '../utils/queries';
 
 const Home = () => {
-  // make query request
+
   const { loading, data } = useQuery(QUERY_TOPICS);
   const { data: userData } = useQuery(QUERY_ME_BASIC);
-  // get topic data from query response
   const topics = data?.topics || [];
   
   const loggedIn = Auth.loggedIn();

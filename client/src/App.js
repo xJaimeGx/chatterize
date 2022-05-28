@@ -60,21 +60,25 @@ function App() {
                 path="/signup"
                 element={<Signup />}
               />
-              <Route
-                path="/profile/:username"
-                element={<Profile />}
-              />
-              <Route
+                <Route
               path="/profile"
               element={<Profile />}
               />
-              <Route
-                path="/topic/:id"
+                <Route
+                path="/topic"
                 element={<SingleTopic />}
               />
               <Route
                 path="*"
                 element={<NoMatch />}
+              />
+              <Route
+                path="/profile/:username"
+                element={<Profile />}
+              />
+                <Route
+                path="/topic/:id"
+                element={<SingleTopic />}
               />
             </Routes> 
           <div>

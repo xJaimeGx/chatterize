@@ -35,7 +35,7 @@ const Login = (props) => {
     }
     // clear form values
     setFormState({
-      username: '',
+      email: '',
       password: '',
     });
   };
