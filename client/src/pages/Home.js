@@ -3,7 +3,7 @@ import TopicList from '../components/TopicList';
 import TopicForm from '../components/TopicForm';
 import FriendList from '../components/FriendList';
 
-import Auth from '../utils/auth.js';
+import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
 import { QUERY_TOPICS, QUERY_ME_BASIC } from '../utils/queries';
 
@@ -14,7 +14,7 @@ const Home = () => {
   // get topic data from query response
   const topics = data?.topics || [];
   
-  const loggedIn = Auth.LoggedIn();
+  const loggedIn = Auth.loggedIn();
 
   return (
     <main>

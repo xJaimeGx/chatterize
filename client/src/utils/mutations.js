@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const LOGIN_USER = gql`
-mutation login($email, password: $password) {
-    login(email: $email, password: $password) {
+mutation login($username: String!, $password: String!) {
+    login(username: $username, password: $password) {
         token
         user {
             _id
@@ -24,6 +24,36 @@ mutation addUser($username: String!, $email: String!, $password: String!) {
 }
 `;
 
+export const ADD_TOPIC = gql`
+  mutation addTopic($topicText: String!) {
+    addTopic(topicText: $topicText) {
+      _id
+      topicText
+      createdAt
+      username
+      replyNum
+      replies {
+        _id
+      }
+    }
+  }
+`;
+
+export const ADD_REPLY = gql`
+  mutation addReply($topicId: ID!, $replyBody: String!) {
+    addReply(topicId: $topicId, replyBody: $replyBody) {
+      _id
+      replyNum
+      replies {
+        _id
+        replyBody
+        createdAt
+        username
+      }
+    }
+  }
+`;
+
 export const ADD_FRIEND = gql`
   mutation addFriend($id: ID!) {
     addFriend(friendId: $id) {
@@ -38,30 +68,13 @@ export const ADD_FRIEND = gql`
   }
 `;
 
-export const ADD_TOPIC = gql`
-  mutation addTopic($topicText: String!) {
-    addTopic(topicText: $topicText) {
+export const REMOVE_FRIEND = gql`
+  mutation removeFriend($id: ID!) {
+    removeFriend(id: $id) {
       _id
-      topicText
-      createdAt
       username
-      replyCount
-      replies {
+      friends {
         _id
-      }
-    }
-  }
-`;
-
-export const ADD_REPLY = gql`
-  mutation addReply($topicId: ID!, $replyBody: String!) {
-    addReply(topicId: $topicId, replyBody: $replyBody) {
-      _id
-      replyCount
-      replies {
-        _id
-        replyBody
-        createdAt
         username
       }
     }

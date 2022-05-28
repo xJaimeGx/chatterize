@@ -1,12 +1,12 @@
-const { User, Topic } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
+const { User, Topic } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
-        const userData = await User.findOne({_id: context.user._id})
+        const userData = await User.findOne({ _id: context.user._id })
           .select('-__v _password')
           .populate('topics')
           .populate('friends');
@@ -18,8 +18,8 @@ const resolvers = {
     users: async () => {
       return User.find()
         .select('-__v -password')
-        .populate('friends')
-        .populate('topics');
+        .populate('topics')
+        .populate('friends');
     },
     // get user by username
     user: async (parent, { username }) => {
@@ -42,8 +42,8 @@ const resolvers = {
           const token = signToken(user);
           return { token, user };        
       },
-      login: async (parent, { email, password }) => {
-          const user = await User.findOne({ email });
+      login: async (parent, { username, password }) => {
+          const user = await User.findOne({ username });
 
           if (!user) {
               throw new AuthenticationError('Wrong Credentials');

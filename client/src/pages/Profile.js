@@ -15,10 +15,11 @@ const Profile = (props) => {
 
   const [addFriend] = useMutation(ADD_FRIEND);
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-    variables: { username: userParam }
+    variables: { username: userParam },
   });
 
   const user = data?.me || data?.user || {};
+
   if (Auth.loggedIn () && Auth.getProfile().data.username === userParam) {
     return <Navigate to="/profile:username" />;
   }
@@ -50,7 +51,7 @@ const Profile = (props) => {
     <div className='m-3'>
       <div className="flex-row">
         <h2 className="sb-header sb-profile bold p-6 align-center">
-          Viewing {userParam ? `${user.username}'s` : 'your'} profile 
+          Viewing {userParam ? `${user.username}'s` : 'your'} profile.
         </h2>
 
         {userParam && (
