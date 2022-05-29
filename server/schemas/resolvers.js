@@ -44,13 +44,10 @@ const resolvers = {
       },
       login: async (parent, { email, password }) => {
           const user = await User.findOne({ email });
-
           if (!user) {
               throw new AuthenticationError('Wrong Credentials');
           }
-
           const validPassword = await user.isCorrectPassword(password);
-
           if (!validPassword) {
               throw new AuthenticationError('Wrong Credentials');
           }
@@ -66,34 +63,29 @@ const resolvers = {
             { new: true }
           );      
           return topic;
-        }
-      
+        }      
         throw new AuthenticationError('Login required!');
       },
       addReply: async (parent, { topicId, replyBody }, context) => {
         if (context.user) {
-          const updatedTopic = await Topic.findOneAndUpdate(
+          const editTopic = await Topic.findOneAndUpdate(
             { _id: topicId },
-            { $push: { reactions: { reactionBody, username: context.user.username } } },
+            { $push: { replies: { replyBody, username: context.user.username } } },
             { new: true, runValidators: true }
-          );
-      
-          return updatedTopic;
-        }
-      
+          );      
+          return editTopic;
+        }      
         throw new AuthenticationError('You need to be logged in!');
       },
       addFriend: async (parent, { friendId }, context) => {
         if (context.user) {
-          const updatedUser = await User.findOneAndUpdate(
+          const editUser = await User.findOneAndUpdate(
             { _id: context.user._id },
             { $addToSet: { friends: friendId } },
             { new: true }
           ).populate('friends');
-      
-          return updatedUser;
-        }
-      
+              return editUser;
+        }      
         throw new AuthenticationError('You need to be logged in!');
       }
   }
