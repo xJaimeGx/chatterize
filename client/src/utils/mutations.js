@@ -9,7 +9,7 @@ mutation login($username: String!, $password: String!) {
             username
         }
     }
-}
+  }
 `;
 
 export const ADD_USER = gql`
@@ -21,7 +21,7 @@ mutation addUser($username: String!, $email: String!, $password: String!) {
             username
         }
     }
-}
+  }
 `;
 
 export const ADD_TOPIC = gql`

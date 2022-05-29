@@ -1,6 +1,6 @@
 import React from 'react';
-import TopicList from '../components/TopicList';
 import TopicForm from '../components/TopicForm';
+import TopicList from '../components/TopicList';
 import FriendList from '../components/FriendList';
 
 import Auth from '../utils/auth';
@@ -8,7 +8,6 @@ import { useQuery } from '@apollo/client';
 import { QUERY_TOPICS, QUERY_ME_BASIC } from '../utils/queries';
 
 const Home = () => {
-
   const { loading, data } = useQuery(QUERY_TOPICS);
   const { data: userData } = useQuery(QUERY_ME_BASIC);
   const topics = data?.topics || [];
@@ -44,7 +43,7 @@ const Home = () => {
             friends={userData.me.friends}
             />
             </div>
-        ): null}
+        ) : null}
       </div>
     </main>
   );

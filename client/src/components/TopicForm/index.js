@@ -26,12 +26,12 @@ const [addTopic, { error }] = useMutation(ADD_TOPIC, {
         //prepend the newest topic 
         cache.writeQuery({
             query: QUERY_TOPICS,
-            data: { topics: [addTopic, ...topics] }
+            data: { topics: [addTopic, ...topics] },
         });
     }
 });
 
-const handleChange = event => {
+const handleChange = (event) => {
     if (event.target.value.length <= 280) {
         setText(event.target.value);
         setCharacterCount(event.target.value.length);
@@ -44,7 +44,7 @@ const handleFormSubmit = async (event) => {
     try {
         // add topic to the database
         await addTopic({
-            variables: { topicText }
+            variables: { topicText },
         });
 
         // clear form value
@@ -57,9 +57,9 @@ const handleFormSubmit = async (event) => {
 
     return (
         <div>
-            <p className={`m-0 ${characterCount === 280 ? 'text-error' : ''}`}
+            <p className={`m-0 ${characterCount === 280 || error ? 'text-error' : ''}`}
             >
-                Character Count: 0/280
+                Character Count: {characterCount}/280
                 {error && <span className="ml-2">Something went wrong...</span>}
             </p>
             <form className="flex-row justify-center justify-space-between-md align-stretch"
