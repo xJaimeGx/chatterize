@@ -98,3 +98,14 @@ export const QUERY_ME_BASIC = gql`
     }
   }
 `;
+
+export const QUERY_REPLY_LIST = gql`
+{
+  replies {
+    _id
+    createdAt
+    replyBody
+    username
+  }
+}
+`;

@@ -22,8 +22,7 @@ const [addTopic, { error }] = useMutation(ADD_TOPIC, {
         }
         //read whats currently in the cache
         const { topics } = cache.readQuery({ query: QUERY_TOPICS });
-
-        //prepend the newest topic 
+         //prepend the newest topic 
         cache.writeQuery({
             query: QUERY_TOPICS,
             data: { topics: [addTopic, ...topics] },

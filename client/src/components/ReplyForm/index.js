@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import { useMutation } from '@apollo/client';
 import { ADD_REPLY } from '../../utils/mutations';
 
@@ -18,7 +19,7 @@ const ReplyForm = ({ topicId }) => {
         event.preventDefault();
         try {
             await addReply({
-                variables: { topicId, replyBody }
+                variables: { replyBody, topicId },
             });
             
             setBody(' ');
@@ -52,6 +53,8 @@ const ReplyForm = ({ topicId }) => {
                     Submit
                 </button>
             </form>
+
+            {error && <div> Something went wrong...</div>}
         </div>
     );
 };

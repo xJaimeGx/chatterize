@@ -71,7 +71,7 @@ const resolvers = {
         if (context.user) {
           const editTopic = await Topic.findOneAndUpdate(
             { _id: topicId },
-            { $push: { reactions: { replyBody, username: context.user.username } } },
+            { $push: { replies: { replyBody, username: context.user.username } } },
             { new: true, runValidators: true }
           );      
           return editTopic;
