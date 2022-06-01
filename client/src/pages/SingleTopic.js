@@ -20,7 +20,7 @@ const SingleTopic = props => {
 
   return (
     <div className="card-topic" style={{  width:"500px",
-    height: "100%", marginLeft:"25%"}}>
+    height: "100%", marginLeft:"30%"}}>
       <div className="card mb-3">
         <p className="card-header">
           <span style={{ fontWeight: 700 }} className="text-light">
