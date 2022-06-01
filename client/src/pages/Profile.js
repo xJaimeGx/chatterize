@@ -53,12 +53,12 @@ const Profile = (props) => {
         <h2 className="align-center">
           {userParam ? `${user.username}'s` : 'Your'} chitter central!
         </h2>
-
-        {userParam && (
-          <button className="friend-btn submit" onClick={handleClick}>
-          Add Friend
-        </button>
-        )}
+        
+          {userParam && (
+            <button className="friend-btn submit" onClick={handleClick}>
+            Add Friend
+          </button>
+          )}
       </div>
 
       <div className="grid justify-space-between-lg mlr-1">
@@ -76,13 +76,14 @@ const Profile = (props) => {
         </div>
       )}
       </div>
+      
 
           <div className="friend-list flex-row mb-3 justify-right profile-friend">
             <FriendList
               username={user.username}
               friendNum={user.friendNum}
               friends={user.friends}
-            />
+              />
           </div>
         </div>
     </div>

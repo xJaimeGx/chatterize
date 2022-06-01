@@ -349,9 +349,9 @@ footer {
 }
 
 .friend-btn {
-  position: absolute;
-  top: 32%;
-  right: 488%;
+  position: relative;
+  bottom: 37px;
+  right: 128px;
   color: var(--color-tert-light);
   text-shadow: 2px 2px 1px var(--color-prim-dark);
 }
@@ -362,8 +362,8 @@ footer {
 }
 
 .profile-friend {
-    position: relative;
-    bottom: 18%;
+  position: relative;
+  bottom: 10%;
 }
 
 h5 {
