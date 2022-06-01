@@ -24,13 +24,13 @@ const SingleTopic = (props) => {
 
   return (
     <main className='reply-page'>
-    <div>
+    <div className='w-40'>
       <div className="card mb-3">
         <p className="card-header">
           <span style={{ fontWeight: 700 }} className="text-light">
             {topic.username}
           </span>{' '}
-          topic on {topic.createdAt}
+          on {topic.createdAt}
         </p>
         <div className="card-body">
           <p>{topic.topicText}</p>

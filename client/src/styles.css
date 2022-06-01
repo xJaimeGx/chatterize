@@ -382,7 +382,6 @@ h5 {
 /* reply page */
 .reply-page {
   margin: 2%;
-  display: inline-grid;
 }
 
 .user-reply {
