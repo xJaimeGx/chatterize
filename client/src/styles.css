@@ -208,12 +208,13 @@ p {
 .card-header {
   margin: auto;
   padding: 14px 20px;
-  background-image: linear-gradient(180deg, var(--color-sec-dark), var(--color-sec-dark), var(--color-tert-light));  
+  background-image: linear-gradient(180deg, var(--color-sec-dark) 82%, var(--color-prim-dark) 96%, #fff 98%);
   color: var(--color-sec);
   font-size: 1.2rem;
   font-weight: bold;
   border-top-right-radius: 35px;
   border-top-left-radius: 5px;
+  height: 26px;
 }
 
 .card-body {
@@ -225,7 +226,7 @@ p {
   display: flex;
   margin: 0;
   padding: 0 10px;
-  background-image: linear-gradient(180deg, var(--color-tert-light), var(--color-sec), var(--color-sec));
+  background-image: linear-gradient(180deg, #fff -2%, var(--color-sec) 50%);
   color: var(--color-sec-dark);
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 35px;
@@ -364,7 +365,6 @@ h5 {
   display: block;
 }
 
-
 /* reply page */
 .reply-page {
   margin: 2%;
@@ -381,6 +381,45 @@ h5 {
   right: 20px;
   top: 75px;
   width: fit-content;
+}
+
+/* login page */
+.login-header {
+  background: linear-gradient(180deg, var(--color-sec-dark) 82%, var(--color-sec) 96%, #fff 98%);
+  color: var(--color-tert-light);
+  text-align: center;
+}
+
+.login-form {
+  margin: 10% auto;
+  padding: 10px;
+}
+
+.login {
+  margin-bottom: 2%;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.field {
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+  background: #e8f0fe;
+  border: 2px solid var(--color-sec-dark);
+  border-radius: 5px;
+  box-sizing: border-box;
+  resize: none;
+}
+
+.login-btn {
+  margin-top: 3%;
+  width: 40%;
+  align-self: center;
+  color: var(--color-tert-light);
+  font-style: italic;
 }
 
 /* wiggle styling */

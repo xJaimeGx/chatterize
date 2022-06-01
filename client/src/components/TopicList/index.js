@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const TopicList = ({ topics, title }) => {
   if (!topics.length) {
-    return <h3>Nothing to say.</h3>;
+    return <h3>Nobody's chatting. Be the first!</h3>;
   }
 
   return (
@@ -20,7 +20,8 @@ const TopicList = ({ topics, title }) => {
               >
                 {topic.username}
               </Link>{' '}
-              topic on {topic.createdAt}
+              {/* topic */}
+              on {topic.createdAt}
             </p>
             <div className="card-body">
               <Link to={`/topic/${topic._id}`}>
