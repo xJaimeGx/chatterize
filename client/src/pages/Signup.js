@@ -75,7 +75,9 @@ const Signup = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className='btn d-block' type='submit'>
+              <button onClick={() => { window.location
+                .dir_name('/profile'); }}
+              className='btn d-block' type='submit'>
                 Submit
               </button>
             </form>
