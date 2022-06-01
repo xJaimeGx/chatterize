@@ -44,7 +44,7 @@ const Login = (props) => {
     <main className='flex-row justify-center mb-4'>
       <div className='login-form'>
         <div className='card'>
-          <h4 className='card-header login-header'>Login</h4>
+          <h4 className='card-header login-header'>Log in to Chatterize!</h4>
           <div className='card-body'>
             <form className='login' onSubmit={handleFormSubmit}>
               <input
