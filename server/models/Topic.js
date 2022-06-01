@@ -27,11 +27,9 @@ const topicSchema = new Schema(
     }
   }
 );
-
 topicSchema.virtual('replyNum').get(function() {
   return this.replies.length;
 });
-
 const Topic = model('Topic', topicSchema);
 
 module.exports = Topic;
