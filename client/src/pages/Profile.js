@@ -48,28 +48,28 @@ const Profile = (props) => {
   };
 
   return (
-    <div className='m-3'>
-      <div>
-        <h2 className="sb-header sb-profile bold align-center">
-          Viewing {userParam ? `${user.username}'s` : 'your'} profile.
+    <div className='m-profile'>
+      <div className='sb-header sb-profile bold'>
+        <h2 className="align-center">
+          {userParam ? `${user.username}'s` : 'Your'} chitter central!
         </h2>
 
         {userParam && (
-          <button className="btn ml-auto" onClick={handleClick}>
+          <button className="friend-btn submit" onClick={handleClick}>
           Add Friend
         </button>
         )}
       </div>
 
-      <div className="grid justify-space-between-lg mb-3 mlr-1">
+      <div className="grid justify-space-between-lg mlr-1">
         <div>
           <TopicList 
           topics={user.topics} 
-          title={`${user.username}'s topics...`} 
+          title={`${user.username}'s current chats...`} 
           />
         </div>
 
-      <div className='new-message mb-3 m-auto profile-message'>
+      <div className='new-message m-auto profile-message'>
         {!userParam && (
           <div>
           <TopicForm />

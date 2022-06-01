@@ -30,12 +30,10 @@ const Home = () => {
             />
           )}
         </div>
-        <div className='new-message mb-3 m-auto'>
+        <div className='new-message m-auto'>
           {loggedIn && (
-          <div>
             <TopicForm />
-          </div>
-        )}
+          )}
         </div>
         {loggedIn && userData ? (
           <div className="friend-list flex-row justify-space-between-lg mb-3 justify-right">

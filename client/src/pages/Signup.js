@@ -50,7 +50,7 @@ const Signup = () => {
             <form className='login' onSubmit={handleFormSubmit}>
               <input
                 className='field'
-                placeholder='Your username'
+                placeholder='Username'
                 name='username'
                 type='username'
                 id='username'
@@ -59,7 +59,7 @@ const Signup = () => {
               />
               <input
                 className='field'
-                placeholder='Your email'
+                placeholder='Email Address'
                 name='email'
                 type='email'
                 id='email'
@@ -68,7 +68,7 @@ const Signup = () => {
               />
               <input
                 className='field'
-                placeholder='******'
+                placeholder='Password (min. 8 characters)'
                 name='password'
                 type='password'
                 id='password'
