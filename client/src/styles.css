@@ -1,8 +1,5 @@
 
 
-
-
-
 :root {
   --color-prim: #b16671;
   --color-sec: #00c5b9;
@@ -19,7 +16,7 @@
 }
 @media only screen and (min-width: 320px) {
   .card-body {
-    font-size: 20px;}
+    font-size: 45px;}
   
 
 .align-center {
@@ -73,7 +70,7 @@
 }
 
 .w-30 {
-  width: 30%;
+  width: 60%;
 }
 
 .w-100 {
@@ -107,9 +104,11 @@ h1 {
 }
 
 
+
 a {
   color: var(--color-tert-light);
   text-decoration: none;
+  
 }
 
 nav a {  
@@ -166,6 +165,7 @@ h2 {
   font-size: 1.5rem;
 }
 
+
 p {
   color: var(--color-tert-dark);
   font-size:18px;
@@ -206,6 +206,8 @@ p {
   display: flex;
   
 }
+
+
 .card-footer {
   display: flex;
   margin: 0;
@@ -217,11 +219,13 @@ p {
   border-bottom-left-radius: 5px;
   line-height: .4;
 }
-
+ 
 .reply {
   margin-left: auto;
   color: var(--color-sec);
+  
 }
+
 
 footer {
   background-color: var(--color-sec-dark);
@@ -497,3 +501,16 @@ pre {
       font-size: 20px;
     }
   } */
+  @media only screen and (min-width: 320px) {
+    p.mb-0 {
+      font-size: 11px;
+      object-fit: contain;
+      
+    }
+
+  @media only screen and (min-width: 320px) {
+    a {
+      font-size: 14px;
+    }
+  }
+  }
