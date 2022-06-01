@@ -23,6 +23,7 @@ const SingleTopic = (props) => {
   }
 
   return (
+    <main className='reply-page'>
     <div>
       <div className="card mb-3">
         <p className="card-header">
@@ -36,12 +37,17 @@ const SingleTopic = (props) => {
         </div>
       </div>
 
+    <div>
       {topic.replyNum > 0 && (
       <ReplyList replies={topic.replies} />
-    )}
-
-    {Auth.loggedIn() && <ReplyForm topicId={topic._id} />}
+      )}
     </div>
+
+      <div className="new-message reply-message">
+        {Auth.loggedIn() && <ReplyForm topicId={topic._id} />}
+      </div>
+    </div>
+    </main>
   );
 };
 

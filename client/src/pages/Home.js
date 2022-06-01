@@ -16,14 +16,9 @@ const Home = () => {
 
   return (
     <main>
-      <div className='flex-row justify-space-between justify-left w-100'>
-        {loggedIn && (
-          <div className="col-12 mb-3">
-            <TopicForm />
-          </div>
-        )}
-        <div className='w-30 mb-3 float-left m-auto'>
-          <div className={`${loggedIn && 'sb-header bold'}`}>
+      <div className='grid justify-space-between justify-left w-100'>
+        <div className='chatting-corner mb-3 mlr-8 m-auto'>
+          <div className='sb-header bold'>
             <h2>Chitter chatter about stuff that matters!</h2>
           </div>
           {loading ? (
@@ -31,12 +26,19 @@ const Home = () => {
           ) : (
             <TopicList 
             topics={topics} 
-            title="insert snappy thing here" 
+            title="Chatting Corner" 
             />
           )}
         </div>
+        <div className='new-message mb-3 m-auto'>
+          {loggedIn && (
+          <div>
+            <TopicForm />
+          </div>
+        )}
+        </div>
         {loggedIn && userData ? (
-          <div className="flex-row justify-space-between-lg mb-3">
+          <div className="friend-list flex-row justify-space-between-lg mb-3 justify-right">
             <FriendList
             username={userData.me.username}
             friendNum={userData.me.friendNum}

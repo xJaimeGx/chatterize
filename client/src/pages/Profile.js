@@ -49,8 +49,8 @@ const Profile = (props) => {
 
   return (
     <div className='m-3'>
-      <div className="flex-row">
-        <h2 className="sb-header sb-profile bold p-6 align-center">
+      <div>
+        <h2 className="sb-header sb-profile bold align-center">
           Viewing {userParam ? `${user.username}'s` : 'your'} profile.
         </h2>
 
@@ -61,23 +61,30 @@ const Profile = (props) => {
         )}
       </div>
 
-      <div className="flex-row justify-space-between-lg mb-3">
-        <div className="w-40">
+      <div className="grid justify-space-between-lg mb-3 mlr-1">
+        <div>
           <TopicList 
           topics={user.topics} 
           title={`${user.username}'s topics...`} 
           />
         </div>
 
-        <div className="mb-3">
-          <FriendList
-            username={user.username}
-            friendNum={user.friendNum}
-            friends={user.friends}
-          />
+      <div className='new-message mb-3 m-auto profile-message'>
+        {!userParam && (
+          <div>
+          <TopicForm />
         </div>
+      )}
       </div>
-      <div className="mb-3">{!userParam && <TopicForm />}</div>
+
+          <div className="friend-list flex-row mb-3 justify-right profile-friend">
+            <FriendList
+              username={user.username}
+              friendNum={user.friendNum}
+              friends={user.friends}
+            />
+          </div>
+        </div>
     </div>
   );
 };
