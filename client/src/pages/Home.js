@@ -45,7 +45,7 @@ const Home = () => {
         <div className='Stick flex-row justify-space-between'>
 {/*  */}
 
-        <div>
+        <div className="card-input">
       <div className="card mb-3">
         <p className="card-header">
           <span style={{ fontWeight: 700 }} className="text-light">

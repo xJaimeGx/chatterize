@@ -19,7 +19,8 @@ const SingleTopic = props => {
   }
 
   return (
-    <div>
+    <div className="card-topic" style={{  width:"500px",
+    height: "100%", marginLeft:"25%"}}>
       <div className="card mb-3">
         <p className="card-header">
           <span style={{ fontWeight: 700 }} className="text-light">
