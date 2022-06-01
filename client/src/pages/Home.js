@@ -4,12 +4,30 @@ import { QUERY_TOPICS } from '../utils/queries';
 import TopicList from '../components/TopicList';
 import ReplyList from '../components/ReplyList';
 
+
+// function Form() {
+//     const App = () => {
+//       const [matches, setMatches] = useState(
+//         window.matchMedia("(min-width: 768px)")
+//         )
+
+//   useEffect(() => {
+//     window
+//     .matchMedia("(min-width: 768px)")
+//     .addEventListener('change', e => setMatches( e.matches ));
+//   }, []);
+// }}
+
 const Home = () => {
   // make query request
   const { loading, data } = useQuery(QUERY_TOPICS);
   // get topic data from query response
   const topics = data?.topics || [];
     console.log(topics);
+    //  Media querys
+     
+
+
 
   return (
     <main>
