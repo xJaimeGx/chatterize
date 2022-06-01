@@ -25,8 +25,14 @@
     "concurrently": "^7.2.0"
   },
   "dependencies": {
+    "add": "^2.0.6",
+    "develop": "^1.0.0",
     "react": "^18.1.0",
+    "react-icons": "^4.4.0",
     "react-tsparticles": "^2.0.6",
+    "run": "^1.4.0",
+    "seed": "^0.4.4",
+    "styled-components": "^5.3.5",
     "tsparticles": "^2.0.6"
   }
 }
