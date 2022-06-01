@@ -39,7 +39,6 @@ const userSchema = new Schema(
     }
   }
 );
-
 // create password using middleware
 userSchema.pre('save', async function(next) {
   if (this.isNew || this.isModified('password')) {
@@ -48,16 +47,13 @@ userSchema.pre('save', async function(next) {
   }
   next();
 });
-
 // verify password
 userSchema.methods.isCorrectPassword = async function(password) {
   return bcrypt.compare(password, this.password);
 };
-
 userSchema.virtual('friendNum').get(function() {
   return this.friends.length;
 });
-
 const User = model('User', userSchema);
 
 module.exports = User;

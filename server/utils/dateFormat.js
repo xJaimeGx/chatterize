@@ -1,6 +1,5 @@
 const createDateSuffix = date => {
   let dateString = date.toString();
-
   // find the last character in the dateString
   const character = dateString.charAt(dateString.length - 1);
 
@@ -16,53 +15,47 @@ const createDateSuffix = date => {
   else {
     dateString = `${dateString}th`;
   }
-
   return dateString;
 };
 
-// format a timestamp
 module.exports = (
   timestamp,
-  { monthLength = 'short', dateSuffix = true } = {}
+  { month = 'short', dateSuffix = true } = {}
 ) => {
   // create month objects
-  const months = {
-    0: monthLength === 'short' ? 'Jan' : 'January',
-    1: monthLength === 'short' ? 'Feb' : 'February',
-    2: monthLength === 'short' ? 'Mar' : 'March',
-    3: monthLength === 'short' ? 'Apr' : 'April',
-    4: monthLength === 'short' ? 'May' : 'May',
-    5: monthLength === 'short' ? 'Jun' : 'June',
-    6: monthLength === 'short' ? 'Jul' : 'July',
-    7: monthLength === 'short' ? 'Aug' : 'August',
-    8: monthLength === 'short' ? 'Sep' : 'September',
-    9: monthLength === 'short' ? 'Oct' : 'October',
-    10: monthLength === 'short' ? 'Nov' : 'November',
-    11: monthLength === 'short' ? 'Dec' : 'December'
+  const monthObj = {
+    0: month === 'short' ? 'Jan' : 'January',
+    1: month === 'short' ? 'Feb' : 'February',
+    2: month === 'short' ? 'Mar' : 'March',
+    3: month === 'short' ? 'Apr' : 'April',
+    4: month === 'short' ? 'May' : 'May',
+    5: month === 'short' ? 'Jun' : 'June',
+    6: month === 'short' ? 'Jul' : 'July',
+    7: month === 'short' ? 'Aug' : 'August',
+    8: month === 'short' ? 'Sep' : 'September',
+    9: month === 'short' ? 'Oct' : 'October',
+    10: month === 'short' ? 'Nov' : 'November',
+    11: month === 'short' ? 'Dec' : 'December'
   };
 
   const dateObject = new Date(timestamp);
-  const currentMonth = months[dateObject.getMonth()];
+  const currentMonth = monthObj[dateObject.getMonth()];
   const dateMonth = dateSuffix
     ? createDateSuffix(dateObject.getDate())
     : dateObject.getDate();
-
   const year = dateObject.getFullYear();
   let hour =
     dateObject.getHours() > 12
       ? Math.floor(dateObject.getHours() / 2)
       : dateObject.getHours();
-
   // whena new day starts, change hour from 0 to 12am
   if (hour === 0) {
     hour = 12;
   }
-
+  // set timeOfDay
   const minutes = dateObject.getMinutes();
-
-  // set our timeOfDay to am or pm
   const timeOfDay = dateObject.getHours() >= 12 ? 'pm' : 'am';
-  const timeStampResult = `${currentMonth} ${dateMonth}, ${year} at ${hour}:${minutes} ${timeOfDay}`;
+  const timeOutput = `${currentMonth} ${dateMonth}, ${year} at ${hour}:${minutes} ${timeOfDay}`;
 
-  return timeStampResult;
+  return timeOutput;
 };
