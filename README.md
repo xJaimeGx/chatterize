@@ -19,7 +19,7 @@ To install the app for yourself, clone the repository (`git clone https://www.gi
 
 ## Usage
 Try [chatterize](https://chatterize123.herokuapp.com/)!
-![screenshot](/assets/image/Capture.PNG "screenshot")
+![screenshot](/client/src/assets/image/Capture.PNG "screenshot")
 
 ## License
 ![bad math](https://img.shields.io/badge/License-MIT-blue)
