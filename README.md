@@ -18,7 +18,7 @@ To create a safe space for like minded individuals to connect. Using tags, a use
 To install the app for yourself, clone the repository (`git clone https://www.github.com/xJaimeGx/chatterize.git`) and run `npm install --saveDevs`.
 
 ## Usage
-Try [chatterize](https://chatterize123.herokuapp.com/)!
+Click our link  [chatterize](https://chatterize123.herokuapp.com/)!
 ![screenshot](/client/src/assets/image/Capture.PNG "screenshot")
 
 ## License
